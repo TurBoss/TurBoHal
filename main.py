@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 import os
 
+from Qt import QtCore, QtGui, QtWidgets
+
 from NodeGraphQt import (NodeGraph,
                          BaseNode,
                          BackdropNode,
                          setup_context_menu)
-from NodeGraphQt import (QtCore,
-                         QtGui,
-                         QtWidgets,
-                         PropertiesBinWidget,
+
+from NodeGraphQt import (PropertiesBinWidget,
                          NodeTreeWidget)
 
 from nodes.hal_comps import And, Not, Or2
