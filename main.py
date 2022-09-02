@@ -6,13 +6,11 @@ from Qt import QtCore, QtGui, QtWidgets
 
 from NodeGraphQt import (NodeGraph,
                          BaseNode,
-                         BackdropNode,
-                         setup_context_menu)
+                         BackdropNode)
 
-from NodeGraphQt import (PropertiesBinWidget,
-                         NodeTreeWidget)
+from NodeGraphQt import (PropertiesBinWidget)
 
-from nodes.hal_comps import And, Not, Or2
+from nodes.hal_comps import And, Not, Or2, Edje
 
 
 def draw_triangle_port(painter, rect, info):
@@ -141,7 +139,7 @@ if __name__ == '__main__':
     graph = NodeGraph()
 
     # set up default menu and commands.
-    setup_context_menu(graph)
+    # setup_context_menu(graph)
 
     # widget used for the node graph.
     graph_widget = graph.widget
@@ -161,19 +159,19 @@ if __name__ == '__main__':
     graph.node_double_clicked.connect(show_prop_bin)
 
     # show the nodes list when a node is "double clicked" in the graph.
-    node_tree = NodeTreeWidget(node_graph=graph)
+    # node_tree = NodeTreeWidget(node_graph=graph)
+    #
+    #
+    # def show_nodes_list(node):
+    #     if not node_tree.isVisible():
+    #         node_tree.update()
+    #         node_tree.show()
 
 
-    def show_nodes_list(node):
-        if not node_tree.isVisible():
-            node_tree.update()
-            node_tree.show()
-
-
-    graph.node_double_clicked.connect(show_nodes_list)
+    # graph.node_double_clicked.connect(show_nodes_list)
 
     # registered nodes.
-    reg_nodes = [And, Not, Or2]
+    reg_nodes = [And, Not, Or2, Edje]
     for n in reg_nodes:
         graph.register_node(n)
 
@@ -191,6 +189,12 @@ if __name__ == '__main__':
 
     or_node = graph.create_node('hal.comp.Or2',
                                 name='OR',
+                                color='#0a1e20',
+                                text_color='#feab20',
+                                pos=[450, 50])
+    
+    edje_node = graph.create_node('hal.comp.Edje',
+                                name='EDJE',
                                 color='#0a1e20',
                                 text_color='#feab20',
                                 pos=[450, 50])

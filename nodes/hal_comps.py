@@ -85,3 +85,7 @@ class Edje(BaseNode):
 
         # create node outputs.
         self.add_output('out A')
+
+        # create the QComboBox menu.
+        items = ['rising', 'falling']
+        self.add_combo_menu('mode_menu', 'Mode', items=items)
