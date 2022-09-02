@@ -1,0 +1,2 @@
+Qt.py
+git+https://github.com/jchanvfx/NodeGraphQt.git
