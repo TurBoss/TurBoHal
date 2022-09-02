@@ -1,6 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-import string
 
 print("digraph hal_nets {")
 print("""
@@ -30,7 +29,7 @@ for line in f:
 for comp in list(component_hash.keys()):
         comp_labels = ["<" + c + "> " + c for c in component_hash[comp]]
         print(("\"" + comp + "\"" + " ["))
-        print(("\tlabel = " + "\"" + string.join(comp_labels, " | ") + "\""))
+        print(("\tlabel = " + "\"" + " | ".join(comp_labels) + "\""))
         print("\tshape = \"record\"")
         print("]")
         print("\n\n\n")
