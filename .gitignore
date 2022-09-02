@@ -1,3 +1,6 @@
 /venv/
 .idea
 /components/
+.project
+.pydevproject
+.settings/
