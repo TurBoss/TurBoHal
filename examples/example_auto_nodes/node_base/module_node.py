@@ -83,7 +83,7 @@ class ModuleNode(AutoNode):
 
     def process_args(self, in_args, out_args=None):
         for arg in in_args:
-            if arg not in self.inputs().keys():
+            if arg not in list(self.inputs().keys()):
                 self.add_input(arg)
 
         for inPort in self.input_ports():
@@ -94,7 +94,7 @@ class ModuleNode(AutoNode):
             return
 
         for arg in out_args:
-            if arg not in self.outputs().keys():
+            if arg not in list(self.outputs().keys()):
                 self.add_output(arg)
 
         for outPort in self.output_ports():

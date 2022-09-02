@@ -213,7 +213,7 @@ class AutoNode(BaseNode, QtCore.QObject):
     def set_property(self, name, value):
         super(AutoNode, self).set_property(name, value)
         self.set_port_type(name, type(value).__name__)
-        if name in self.model.custom_properties.keys():
+        if name in list(self.model.custom_properties.keys()):
             self.update_stream()
 
     def set_port_type(self, port, data_type: str):
@@ -232,9 +232,9 @@ class AutoNode(BaseNode, QtCore.QObject):
         elif type(port) is str:
             inputs = self.inputs()
             outputs = self.outputs()
-            if port in inputs.keys():
+            if port in list(inputs.keys()):
                 current_port = inputs[port]
-            elif port in outputs.keys():
+            elif port in list(outputs.keys()):
                 current_port = outputs[port]
 
         if current_port:

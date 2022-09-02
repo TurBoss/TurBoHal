@@ -50,7 +50,7 @@ def getNodesRecursively(path=__file__):
                         Nodes.append(getattr(mod, node))
 
                 except ImportError as e:
-                    print ('Error in importing class: %s' % (e))
+                    print(('Error in importing class: %s' % (e)))
                     continue
 
     return Nodes

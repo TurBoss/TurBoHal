@@ -78,9 +78,9 @@ class MathFunctionsNode(BaseNode):
 
             self.set_property('output', data)
         except KeyError as error:
-            print("An input is missing! %s" % str(error))
+            print(("An input is missing! %s" % str(error)))
         except TypeError as error:
-            print("Error evaluating function: %s" % str(error))
+            print(("Error evaluating function: %s" % str(error)))
 
     def on_input_connected(self, to_port, from_port):
         """Override node callback method."""

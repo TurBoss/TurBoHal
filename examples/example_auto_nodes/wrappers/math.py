@@ -1,4 +1,4 @@
-from math import *
+from .math import *
 
 _pi = pi
 _e = e
@@ -10,27 +10,27 @@ _nan = nan
 # add contants as functions
 
 def pi():
-    print('pi', _pi)
+    print(('pi', _pi))
     return _pi
 
 
 def e():
-    print('e', _e)
+    print(('e', _e))
     return _e
 
 
 def tau():
-    print('tau', _tau)
+    print(('tau', _tau))
     return _tau
 
 
 def inf():
-    print('inf', _inf)
+    print(('inf', _inf))
     return _inf
 
 
 def nan():
-    print('nan', _nan)
+    print(('nan', _nan))
     return _nan
 
 

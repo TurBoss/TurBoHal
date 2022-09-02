@@ -214,5 +214,5 @@ class TupleFunctionsNode(ModuleNode):
 
 if __name__ == "__main__":
     s = "[2,2]"
-    print(numpy.zeros(eval(s)))
+    print((numpy.zeros(eval(s))))
     pass

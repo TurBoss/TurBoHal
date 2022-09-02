@@ -89,12 +89,12 @@ def allow_edit(graph, node):
 
 
 def print_path(graph, node):
-    print(node.path())
+    print((node.path()))
 
 
 def print_children(graph, node):
     children = node.children()
-    print(len(children), children)
+    print((len(children), children))
 
 
 def publish_node(graph, node):

@@ -247,7 +247,7 @@ class SubGraphNode(AutoNode, SubGraph):
                         out_connect.append((pipe.output_port, pipe.input_port))
         in_map = {}
         for idx, ports in enumerate(in_connect):
-            if ports[0] in in_map.keys():
+            if ports[0] in list(in_map.keys()):
                 in_map[ports[0]].append([ports[1], in_map[ports[0]][0][1]])
             else:
                 self.create_input_node()
@@ -256,7 +256,7 @@ class SubGraphNode(AutoNode, SubGraph):
                 else:
                     in_map[ports[0]] = [[ports[1], 0]]
 
-        for port0, data in in_map.items():
+        for port0, data in list(in_map.items()):
             for port_data in data:
                 idx = port_data[1]
                 connected.append((port0, self.input_ports()[idx].view))
@@ -264,7 +264,7 @@ class SubGraphNode(AutoNode, SubGraph):
 
         out_map = {}
         for idx, ports in enumerate(out_connect):
-            if ports[0] in out_map.keys():
+            if ports[0] in list(out_map.keys()):
                 out_map[ports[0]].append([ports[1], out_map[ports[0]][0][1]])
             else:
                 self.create_output_node()
@@ -273,7 +273,7 @@ class SubGraphNode(AutoNode, SubGraph):
                 else:
                     out_map[ports[0]] = [[ports[1], 0]]
 
-        for port0, data in out_map.items():
+        for port0, data in list(out_map.items()):
             for port_data in data:
                 idx = port_data[1]
                 connected.append((port0, self.sub_graph_output_nodes[idx].input_ports()[0].view))

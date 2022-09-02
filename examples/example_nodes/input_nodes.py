@@ -65,7 +65,7 @@ class TextFileInputNode(BaseNode):
                     data = fread.read()
                     self.set_property('output', data)
             else:
-                print("%s doesn't exist!" % path)
+                print(("%s doesn't exist!" % path))
                 self.set_property('output', '')
 
 

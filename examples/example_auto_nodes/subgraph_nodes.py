@@ -70,7 +70,7 @@ def read_json(file_path):
             layout_data = json.load(data_file)
     except Exception as e:
         layout_data = None
-        print('Cannot read data from file.\n{}'.format(e))
+        print(('Cannot read data from file.\n{}'.format(e)))
     return layout_data
 
 
@@ -113,11 +113,11 @@ class Publish(SubGraph):
             n_data = data.pop('node')
             n_data.pop('name')
             # set properties.
-            for prop in self.model.properties.keys():
-                if prop in n_data.keys():
+            for prop in list(self.model.properties.keys()):
+                if prop in list(n_data.keys()):
                     self.model.set_property(prop, n_data[prop])
             # set custom properties.
-            for prop, val in n_data.get('custom', {}).items():
+            for prop, val in list(n_data.get('custom', {}).items()):
                 self.model.set_property(prop, val)
 
             if n_data.get('dynamic_port', None):
@@ -151,5 +151,5 @@ class Publish(SubGraph):
             new_node_class.NODE_NAME = data['node']['name']
             return new_node_class
         except:
-            print('file {} is not a correct published node.'.format(file_path))
+            print(('file {} is not a correct published node.'.format(file_path)))
             return None

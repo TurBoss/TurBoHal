@@ -1,4 +1,4 @@
-from math import *
+from .math import *
 
 _pi = pi
 _e = e
