@@ -131,7 +131,7 @@ class MyNode(BaseNode):
         self.add_output('triangle port', painter_func=draw_triangle_port)
 
 
-if __name__ == '__main__':
+def main():
     QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     app = QtWidgets.QApplication([])
 
@@ -239,3 +239,7 @@ if __name__ == '__main__':
     # bar_node.set_input(0, text_node.output(0))
 
     app.exec_()
+
+
+if __name__ == '__main__':
+    main()
