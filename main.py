@@ -171,7 +171,7 @@ if __name__ == '__main__':
     # graph.node_double_clicked.connect(show_nodes_list)
 
     # registered nodes.
-    reg_nodes = [And, Not, Or2, Edje]
+    reg_nodes = [And, Not, Or2, Edje, MyNode]
     for n in reg_nodes:
         graph.register_node(n)
 
@@ -197,7 +197,13 @@ if __name__ == '__main__':
                                 name='EDJE',
                                 color='#0a1e20',
                                 text_color='#feab20',
-                                pos=[450, 50])
+                                pos=[450, 100])
+    
+    my_node = graph.create_node('com.chantasticvfx.MyNode',
+                                name='MY',
+                                color='#0a1e20',
+                                text_color='#feab20',
+                                pos=[450, 150])
     #
     # foo_node = graph.create_node('com.chantasticvfx.FooNode',
     #                              name='node',
